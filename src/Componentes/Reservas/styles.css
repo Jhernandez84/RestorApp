@@ -1,0 +1,50 @@
+.cont-cal-filas{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 95px 95px 95px  95px 95px 95px 95px;
+    grid-template-rows: 95px repeat();
+}
+
+.cont-cal-filas .row-title{
+    font-size: medium;
+    font-weight: bold;
+    height: 1px;
+}
+
+.col-cal-dia{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 0.5px;
+}
+
+.fds{
+    background-color: rgb(160, 158, 158);
+
+}
+
+.col-cal-dia:hover{
+    background-color: rgb(233, 241, 238);
+    transition-delay: 0.1s;
+
+
+}
+
+.hora{
+    cursor: pointer;
+    border: solid 0.1px;
+    height: 30px;
+    margin-bottom: 3%;
+    border-radius: 25px;
+}
+
+.container-vista-calendario-horarios{
+    display: grid;
+    grid-template-columns: 70% auto;
+}
+
+.lista-horarios{
+    width: 200px;
+}
+

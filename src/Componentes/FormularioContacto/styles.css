@@ -1,0 +1,17 @@
+.container-contacto{
+    display: grid;
+    grid-template-columns: auto auto;
+
+}
+
+img{
+    height: 500px;
+    width: 400px;
+    border-radius: 25px;
+}
+
+.container-formulario{
+    margin-left: 5%;
+
+
+}

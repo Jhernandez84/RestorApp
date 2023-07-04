@@ -1,0 +1,26 @@
+.container-pedido{
+    display: flex;
+    flex-direction: row;
+    border-radius: 25px;
+    justify-content: center;
+    align-items: center;
+}
+.container-pedido h1{
+    font-size: medium;
+    font-weight: bold;
+}
+
+.btn1 {
+    font-size: medium;
+    height: 30px;
+    border-radius: 0 25px 25px 0;
+    border: solid;
+    text-align: center;
+}
+.btn2 {
+    font-size: medium;
+    height: 30px;
+    border-radius: 25px 0 0 25px;
+    border: solid;
+    text-align: center;
+}
