@@ -7,20 +7,23 @@ export const MenuCardGenerator = ({menu}) =>{
 
     return (
         <>
-        <div className="card">
-        <div className="card-body">
-        <img className="carg-image" width="150px" src={menu.imagen} alt={menu.nombre}/>
-        <h3 className="card-title">{menu.nombre}</h3>
-        <h2 className="card-text">{menu.estrellas}</h2>
-        <h5 className="card-title">{menu.chef}</h5>
-        <p className="card-text">{menu.des}</p>
-        <div className="card-pedido">
-            <div className="container-pedido">
-            <button className="btn2 btn" onClick={()=>reducir(0)}>-{1}</button>
-            <h1>{Pedido}</h1>
-            <button className="btn1 btn" onClick={()=>aumentar(0)}>+{1}</button>            </div> 
-        </div>        
-        </div>
+        <div className="card-container">
+            <div className="card-menu">
+                <div className="card-menu-image">
+                    <img className="card-image" src={menu.imagen} alt={menu.nombre}/>
+                </div>
+                <div className="card-menu-details">                
+                    <p className="menu-title">{menu.nombre} de {menu.chef} ({menu.estrellas}) - Valor $ {menu.valor}</p>
+                    <p className="menu-desc">{menu.descripcion}</p>
+                {/* </div> */}
+                <div className="menu-pedido-container">
+                    <p>Agregar a mi pedido</p>
+                    <button className="btn2 btnCart" onClick={()=>reducir(0)}>-{1}</button>
+                    <p>{Pedido}</p>
+                    <button className="btn1 btnCart" onClick={()=>aumentar(0)}>+{1}</button>
+                </div> 
+                </div>
+            </div>
         </div>
         </>
     )

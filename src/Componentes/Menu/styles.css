@@ -1,26 +1,63 @@
-.container-pedido{
-    display: flex;
-    flex-direction: row;
-    border-radius: 25px;
-    justify-content: center;
-    align-items: center;
-}
-.container-pedido h1{
-    font-size: medium;
-    font-weight: bold;
-}
-
-.btn1 {
-    font-size: medium;
+.btnCart{
+    font-size: small;
     height: 30px;
-    border-radius: 0 25px 25px 0;
-    border: solid;
-    text-align: center;
-}
-.btn2 {
-    font-size: medium;
-    height: 30px;
+    width: 50px;
     border-radius: 25px 0 0 25px;
     border: solid;
     text-align: center;
+    text-align: end;
 }
+
+.btn1 {
+    border-radius: 0 25px 25px 0;
+}
+.btn2 {
+    border-radius: 25px 0 0 25px;
+}
+
+.card-container{
+    display: block;
+    padding: 10px;
+}
+
+.card-container .card-menu{
+    display: grid;
+    grid-template-columns: 20% 75%;
+    border: solid 0.5px;
+    padding: 10px;
+    border-radius: 25px;
+}
+
+.card-container .card-menu .card-menu-image .card-image{
+    width: 150px;
+    height: 150px;
+}
+
+.card-container .card-menu .card-menu-details{
+    display: grid;
+    grid-template-rows: 20% 60% 20%;
+}
+
+.card-container .card-menu .menu-pedido-container{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-self: flex-end;
+    width: 300px;
+    margin-bottom: 0px;
+}
+
+
+.card-menu-details{
+    height: 160px;
+}
+
+.menu-title {
+    text-align: left;
+    font-weight: bold;
+}
+
+.menu-desc{
+    text-align: left;
+    
+}
+
