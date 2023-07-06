@@ -16,7 +16,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: solid 0.5px;
+    border-top: solid 0.5px;
 }
 
 .fds{
@@ -27,7 +27,6 @@
 .col-cal-dia:hover{
     background-color: rgb(233, 241, 238);
     transition-delay: 0.1s;
-
 
 }
 
@@ -48,3 +47,8 @@
     width: 200px;
 }
 
+.img-reservas{
+    margin: 25px 0 25px 0;
+    width: 80vw;
+    height: 15vh;
+}

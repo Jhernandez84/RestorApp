@@ -1,8 +1,12 @@
 import { VideoIntro } from "../VideoIncrustado/VideoIntro"
+import { FormContacto } from "../FormularioContacto/FormularioContacto"
+import { Header } from "../Header-Footer/Header"
+import { Footer } from "../Header-Footer/Footer"
 
 export const HomePage = () =>{
     return (
         <>
+        <Header/>
         <h2>Sabores del Mundo</h2>
         <div className="contenedorVideoInicio">
         <VideoIntro/>
@@ -14,6 +18,9 @@ export const HomePage = () =>{
             
 
             <p>En nuestro restaurant nos preocupamos por los detalles, es por esto que... </p>
+        
+        <FormContacto/>
+        <Footer/>
         </>
     )
 }

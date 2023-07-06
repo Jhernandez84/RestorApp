@@ -1,7 +1,8 @@
 .container-contacto{
     display: grid;
     grid-template-columns: auto auto;
-
+    margin: 500px 25px 100px 25px;
+    
 }
 
 img{

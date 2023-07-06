@@ -15,10 +15,11 @@ export const VistaReservas = () => {
         </select>
         <button type="button" className="btn btn-secondary">Siguiente</button> */}
         {/* </div> */}
-        <h2>Seleccione la fecha de su preferencia</h2>
+        <img className="img-reservas" src="https://www.lavanguardia.com/files/image_449_220/files/fp/uploads/2023/05/05/6454b91fe40cf.r_d.3297-2647.jpeg" alt="" />
+        <h2>Seleccione la fecha y el horario que desea reservar</h2>
         <div className="container-vista-calendario-horarios">
             <Calendario/>
-            <Horarios/>    
+            <Horarios/>
         </div>
     </>      
     )

@@ -1,6 +1,14 @@
 import { NavLink } from "react-router-dom"
+// import { login } from "../Firebase/Sesion"
 
 export const Navbar = () =>{
+
+    const IniciarSesion = (e) =>{
+        e.preventDefault()
+        
+    }
+
+
     return(
         <>
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -24,8 +32,9 @@ export const Navbar = () =>{
                 <NavLink className="nav-link active" aria-current="page" to="/Contacto">Contacto</NavLink>
                 </li>
             </ul>
+            
             <form className="d-flex" role="search">
-                <button className="btn btn-outline-success" type="submit">Buscar</button>
+                {/* <button className="btn" onClick={login} type="">Iniciar Sesión</button> */}
             </form>
             </div>
         </div>
