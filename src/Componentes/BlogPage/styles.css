@@ -1,0 +1,53 @@
+.article{
+    padding: 25px;
+    margin: 50px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    flex-flow: wrap;
+}
+
+.article-vertical{
+    /* padding: 25px; */
+    /* margin: 25px; */
+    display: grid;
+    grid-template-rows: 40% 60%;
+    flex-flow: wrap;
+    gap: 10px;
+}
+
+.article-vertical h1{
+    padding-bottom: 30%;
+}
+
+.chef-photo-vertical{
+    width: 405px;
+    height: 70%;
+}
+
+.text{
+    text-align: justify;
+    margin: 0 15px 0 15px;    
+}
+.chef-photo{
+    width: 100%;
+    height: 250px;
+}
+
+.chef-final-article{
+    padding: 25px;
+    margin: 50px;
+    display: grid;
+    grid-template-columns: ;
+
+}
+
+.article-two-columns{
+    padding: 25px 0 25px 0;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    flex-flow: wrap;
+}
+
+.text-invite{
+    margin: 25px;
+}

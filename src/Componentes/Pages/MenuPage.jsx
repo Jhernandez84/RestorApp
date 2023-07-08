@@ -1,5 +1,6 @@
 import { MenuCardGenerator } from "../Menu/MenuCardGenerator"
 import { Menu } from "../Menu/MenuDB"
+import { Footer } from "../Header-Footer/Footer"
 import "./styles.css"
 
 
@@ -62,6 +63,7 @@ export const MenuPage = (Menu) =>{
         <div className="card-container">
             {menu.map((menu)=>( <MenuCardGenerator menu={menu} key={menu.id}/>))}
         </div>
+        <Footer/>
         </>
     )
 }

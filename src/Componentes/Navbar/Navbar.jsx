@@ -11,7 +11,7 @@ export const Navbar = () =>{
 
     return(
         <>
-        <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        <nav className="navbar navbar-expand-lg bg-body-tertiary sticky-top">
         <div className="container-fluid">
             <NavLink className="navbar-brand" to="/">RestorApp</NavLink>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,16 +23,16 @@ export const Navbar = () =>{
                 <NavLink className="nav-link active" aria-current="page" to="/NuestroMenu">Nuestro Menú</NavLink>
                 </li>
                 <li className="nav-item">
-                <NavLink className="nav-link active" aria-current="page" to="/Reservas">Reservas</NavLink>
+                <NavLink className="nav-link active" aria-current="page" to="/Reservas">Reservas Socios</NavLink>
                 </li>
                 <li className="nav-item">
                 <NavLink className="nav-link active" aria-current="page" to="/NuestroBlog">Nuestro Blog</NavLink>
                 </li>
                 <li className="nav-item">
-                <NavLink className="nav-link active" aria-current="page" to="/Contacto">Contacto</NavLink>
+                <a href="#" className="nav-link active" aria-current="page" to="/Contacto">Contacto</a>
                 </li>
             </ul>
-            
+
             <form className="d-flex" role="search">
                 {/* <button className="btn" onClick={login} type="">Iniciar Sesión</button> */}
             </form>

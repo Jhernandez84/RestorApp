@@ -2,6 +2,7 @@ import { VideoIntro } from "../VideoIncrustado/VideoIntro"
 import { FormContacto } from "../FormularioContacto/FormularioContacto"
 import { Header } from "../Header-Footer/Header"
 import { Footer } from "../Header-Footer/Footer"
+import { NavLink } from "react-router-dom"
 
 export const HomePage = () =>{
     return (
@@ -17,7 +18,7 @@ export const HomePage = () =>{
             </div>
             
 
-            <p>En nuestro restaurant nos preocupamos por los detalles, es por esto que... </p>
+            <p>En nuestro restaurant nos preocupamos por los detalles, es por esto que... te invitamos a conocer nuestro <NavLink className="nav-link" aria-current="page" to="/NuestroBlog">Blog</NavLink> en dónde podrás encontrar bla bla bla</p>
         
         <FormContacto/>
         <Footer/>
