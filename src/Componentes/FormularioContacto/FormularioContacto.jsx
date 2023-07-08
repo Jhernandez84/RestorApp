@@ -25,7 +25,6 @@ export const FormContacto = () =>{
         setContacto({
           ...contacto,[target.name]: target.value
         })
-        // console.log(contacto)
       }
 
     return (

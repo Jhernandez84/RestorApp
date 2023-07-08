@@ -1,16 +1,14 @@
 import { MenuCardGenerator } from "../Menu/MenuCardGenerator"
-import { GetMenu } from "../Menu/MenuDB"
 import { Footer } from "../Header-Footer/Footer"
 import { db } from "../Firebase/firebase"
 import {useState, useEffect } from "react"
 import "./styles.css"
-import { async } from "@firebase/util"
-
 
 <link rel="stylesheet" href="style.css" />
 
 export const MenuPage = () =>{
     const [menu, setMenu] = useState([])
+    
     useEffect(()=>{
         const menu = GetMenu()
         // console.log(menu)

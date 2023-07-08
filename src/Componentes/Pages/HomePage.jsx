@@ -20,6 +20,12 @@ export const HomePage = () =>{
 
             <p>En nuestro restaurant nos preocupamos por los detalles, es por esto que... te invitamos a conocer nuestro <NavLink className="nav-link" aria-current="page" to="/NuestroBlog">Blog</NavLink> en dónde podrás encontrar bla bla bla</p>
         
+            <h1>Explicar modelo de suscripción</h1>
+
+            <h1>AGREGAR MENU ALEATORIO</h1>
+
+            <h1>AGREGAR SECCIÓN CON OPINIONES U OTRO</h1>
+
         <FormContacto/>
         <Footer/>
         </>
