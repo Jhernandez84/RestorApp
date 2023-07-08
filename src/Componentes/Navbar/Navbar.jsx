@@ -2,13 +2,10 @@ import { NavLink } from "react-router-dom"
 // import { login } from "../Firebase/Sesion"
 
 export const Navbar = () =>{
-
     const IniciarSesion = (e) =>{
         e.preventDefault()
         
     }
-
-
     return(
         <>
         <nav className="navbar navbar-expand-lg bg-body-tertiary sticky-top">
