@@ -1,10 +1,26 @@
+import { useState, useEffect } from "react"
+
 import "./styles.css"
 
 import { Calendario } from "./Calendario"
 import { Horarios } from "./Horarios"
 export const VistaReservas = () => {
-    
+
+
+    const baseReserva = {saveDate:'',savedTime:'',email:'',request:'Seleccione...'}
+    const [reserva, setReserva] = useState(baseReserva)
+    const [hora, setHora] = useState([])
+
+    const SaveDateReserved = async () =>{
+    try{
+        await db.collection('reservas').add(contacto)
+        swal("Solicitud recibida exitosamente", `Muchas gracias ${contacto.name}, tu solicitud para ${contacto.request} pronto será respondida al correo ${contacto.email}`, "success");
+        setContacto(camposContacto)
+    }catch (err){
+        swal("Upsss", "¿Algo falló, podrías intentar nuevamente?", "error");
+    }}
     return(
+
     <> 
         {/* <div className="container container-mes">
         <button type="button" className="btn btn-secondary">Anterior</button>
@@ -22,7 +38,7 @@ export const VistaReservas = () => {
         <div className="container-vista-calendario-horarios">
         {/* <div> */}
             <Calendario/>
-            <Horarios/>
+            {/* <Horarios/> */}
         </div>
     </>      
     )

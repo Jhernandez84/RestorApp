@@ -27,7 +27,7 @@ export const MenuPage = () =>{
 
     return (
         <>
-        <h2>Te invitamos a conocer nuestro Menú</h2>
+        <h1>Te invitamos a conocer nuestro Menú</h1>
         <div className="card-container">
             {menu.map((menu)=>( <MenuCardGenerator menu={menu} key={menu.id}/>))}
         </div>

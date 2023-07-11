@@ -1,43 +1,25 @@
-import { async } from "@firebase/util"
-import { fetchSignInMethodsForEmail } from "firebase/auth"
 import { useEffect, useState } from "react"
 import { db } from "../Firebase/firebase"
+import { Horarios } from "./Horarios"
 import swal from "sweetalert"
 import "./styles.css"
 // import Calendar from "react-calendar"
 
 export const Calendario = () => {
     //necesito crear una función que obtenga el mes del año y las fechas disponibles.
-            const [reserva, setReserva] = useState([])
-            const [hora, setHora] = useState([])
+    const [hora, setHora] = useState([])
+    const GetHora = async () =>{
 
-            useEffect(()=>{
-                const reserva = GetAvailableDates()
-                // console.log(reserva)
-            },[])
-        
-            const GetAvailableDates = async () =>{
-                    db.collection('reservas').onSnapshot((querySnapshot)=>{
-                    const fechas = []
-                    querySnapshot.forEach((fecha)=> {
-                    fechas.push({...fecha.data(), id:fecha.id})
-                    console.log(fechas)
-                  })
-                  setReserva(fechas)
-                })
-                return reserva
-              }
-
-            const GetAvailableTime = async (day) =>{
-                // var date= "2023-07-09"
-                const dates = await db.collection('reservas').doc(day).get() 
-                setHora({...dates})
-                console.log(hora)
-              } 
-
-            const reservaFecha  = async ()=>{
-
-            }
+            db.collection('horarios').onSnapshot((querySnapshot)=>{
+            const horas = []
+            querySnapshot.forEach((hora)=> {
+            horas.push({...hora.data(), id:hora.id})
+        })
+        setHora(horas)
+        // console.log(hora)
+        })
+        return hora
+    }
 
     return (
         <>
@@ -50,8 +32,8 @@ export const Calendario = () => {
                 <div className="row-title">Sábado</div>
                 <div className="row-title">Domingo</div>
                 {/* De aquí en adelante debe renderizar las fechas */}
-                <div className="col-cal-dia" onClick={()=> GetAvailableTime("2023-07-09")}>26</div>
-                <div className="col-cal-dia" onClick={()=> console.log('sobre el 2')}>27</div>
+                <div className="col-cal-dia" onClick={()=> GetHora()}>26</div>
+                <div className="col-cal-dia" onClick={()=> GetHora()}>27</div>
                 <div className="col-cal-dia">28</div>
                 <div className="col-cal-dia">29</div>
                 <div className="col-cal-dia">30</div>
@@ -93,6 +75,9 @@ export const Calendario = () => {
                 <div className="col-cal-dia fds">6</div>
                 <div className="col-cal-dia fds">7</div>
         </div>
-        {/* </section>         */}
+        <div>
+            <p className="row-title">Horarios</p>
+            {hora.map((horarios)=>( <Horarios horarios={horarios} key={horarios.id}/>))}   
+        </div>
         </>
 )}

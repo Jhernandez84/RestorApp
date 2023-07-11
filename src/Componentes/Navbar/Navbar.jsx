@@ -7,7 +7,7 @@ import './styles.css'
 
 export const Navbar = () =>{
 
-    const [user, setUser] = useState(null)
+    const [user, setUser] = useState(null)    
     
     const login = (e)=> {
         e.preventDefault()
@@ -18,7 +18,7 @@ export const Navbar = () =>{
             foto:user.photoURL
             }) 
         })
-
+        
     }
     
     const logOut = ()=> {
@@ -54,14 +54,12 @@ export const Navbar = () =>{
 
             <form className="d-flex" role="search">
             {user? (<>
-        <div className="cont-login">
+
+            <div className="cont-login">
             <img className="img-user" src={user.foto} alt={user.name} />
             <p>Bienvenid@ {user.name}</p>
             <button className="btn" onClick={logOut}>Cerrar sesión</button>
-
-
-
-        </div>
+            </div>
             </>
             ):(
             <button className="btn" onClick={login}>Iniciar sesión</button>

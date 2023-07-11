@@ -7,6 +7,7 @@ export const Blog = () =>{
     return(
         <>
             <section className="Blog">
+            <h1>Bienvenido a nuestro Blog</h1>
             <article className="chef-article article">
                 <article className="article-vertical">
                     <h1>Descubre los sabores del mundo en un solo lugar.</h1>

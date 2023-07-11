@@ -1,10 +1,13 @@
 import { FormContacto } from "../FormularioContacto/FormularioContacto"
 import {Footer} from "../Header-Footer/Footer"
+import "./styles.css"
 
 export const ContactPage = () =>{
     return(
         <>
-        <h2>Contacto</h2>
+        <h1>Contacto</h1>
+
+        <p className="text-contacto">Si te gustó lo que has visto hasta ahora y aún así quieres conocer más acerca de nuestro restaurant, haznos saber lo que necesitas ingresando los datos en el siguiente formulario y te contactaremos a la brevedad</p>
         <section>
         <FormContacto/>
         <h2>Llegar es muy fácil, solo buscanos haciendo click aquí</h2>

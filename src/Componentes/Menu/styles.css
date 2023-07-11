@@ -1,15 +1,17 @@
 .btnCart{
     font-size: small;
     height: 30px;
-    width: 50px;
+    width: 30px;
     border-radius: 25px 0 0 25px;
     border: solid;
     text-align: center;
     text-align: end;
+    padding: none;
+    margin: none;
 }
 
 .btn1 {
-    border-radius: 0 25px 25px 0;
+    border-radius: 0px 25px 25px 0;
 }
 .btn2 {
     border-radius: 25px 0 0 25px;
@@ -39,11 +41,14 @@
 }
 
 .card-container .card-menu .menu-pedido-container{
-    display: grid;
-    grid-template-columns: auto auto auto auto;
+    display: flex;
+    flex-direction: row;
     justify-self: flex-end;
-    width: 300px;
     margin-bottom: 0px;
+}
+
+.card-container .card-menu .menu-pedido-container p{
+    margin: 4px;
 }
 
 
