@@ -1,24 +1,19 @@
 import { useState, useEffect } from "react"
 import { db } from "../Firebase/firebase"
-
 import "./styles.css"
 import swal from "sweetalert"
-import { Navbar } from "../Navbar/Navbar"
 
-export const Horarios = ({horarios, user}) =>{
-// Tiene que leer todo esto
+export const Horarios = ({horarios, infoSocio}) =>{
     const ReservarSlot = async (time)  => {
-        swal("Reserva exitosa", `Su reserva fue ingresada con éxito para las ${time}`, "success");
-        const info = {disponible:false}
+        console.log(infoSocio.userName)
+        swal("Reserva exitosa", `${infoSocio.userName}, su reserva fue ingresada con éxito para las ${time} y hemos enviado un correo a su dirección ${infoSocio.email}`, "success");
+        const info = {usuario:infoSocio.userName, usuarioMail:infoSocio.email, disponible:false}
         await db.collection('horarios').doc(time).update(info)
     }
-
     return (
         <>
         <div className="lista-horarios">
                 <div className="div-almuerzos">
-                {/* <p className="hora-desc">{horarios.id}</p> */}
-                {/* <p className="hora-est">{horarios.disponible}</p> */}
                 {horarios.disponible? (
                 <p className="hora" onClick={()=> ReservarSlot(horarios.id)}>{horarios.hora} Disponible</p>
                 ):(

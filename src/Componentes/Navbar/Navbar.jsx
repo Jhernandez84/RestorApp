@@ -1,30 +1,10 @@
 import { NavLink } from "react-router-dom"
-import swal from "sweetalert"   
 import { useState } from "react"
-import { auth, db, provider } from "../Firebase/firebase"
-import { signInWithPopup } from "firebase/auth"
+import { auth, provider } from "../Firebase/firebase"
 import './styles.css'
 
-export const Navbar = () =>{
-
-    const [user, setUser] = useState(null)    
+export const Navbar = ({logIn,logOut}) =>{
     
-    const login = (e)=> {
-        e.preventDefault()
-        signInWithPopup(auth,provider).then(({user})=>{
-            console.log(user)
-            setUser({id:user.id,
-            name:user.displayName,
-            foto:user.photoURL
-            }) 
-        })
-        
-    }
-    
-    const logOut = ()=> {
-        setUser(null)
-      }
-
     return(
         <>
         <nav className="navbar navbar-expand-lg bg-body-tertiary sticky-top">
@@ -47,27 +27,23 @@ export const Navbar = () =>{
                 <li className="nav-item">
                 <NavLink className="nav-link active" aria-current="page" to="/Contacto">Contacto</NavLink>
                 </li>
-                <li className="nav-item">
+                {/* <li className="nav-item">
                 <NavLink className="nav-link active" aria-current="page" to="/Admin">Administrador</NavLink>
-                </li>
+                </li> */}
             </ul>
 
-            <form className="d-flex" role="search">
-            {user? (<>
-
+            {/* <form className="d-flex" role="search">
+            {auth.currentUser ? (<>
             <div className="cont-login">
-            <img className="img-user" src={user.foto} alt={user.name} />
-            <p>Bienvenid@ {user.name}</p>
+            <img className="img-user" src={auth.currentUser.photoURL} alt={auth.currentUser.displayName} />
+            <p>Bienvenid@ {auth.currentUser.displayName}</p>
             <button className="btn" onClick={logOut}>Cerrar sesión</button>
             </div>
             </>
             ):(
-            <button className="btn" onClick={login}>Iniciar sesión</button>
-    )
-    }
+            <button className="btn" onClick={logIn}>Iniciar sesión</button>)}
 
-                {/* <button className="btn" onClick={IniciarSesion} type="">Iniciar Sesión</button> */}
-            </form>
+            </form> */}
             </div>
         </div>
         </nav>
