@@ -1,18 +1,66 @@
 import { useEffect, useState } from "react"
+import {doc, setDoc} from "firebase/firestore"
 import { db } from "../Firebase/firebase"
 import { Horarios } from "./Horarios"
 import swal from "sweetalert"
 import "./styles.css"
 // import Calendar from "react-calendar"
 
+function obtenerDiasDelMes(mes, año) {
+    var fechaInicial = new Date(año, mes - 1, 1); // Restamos 1 al mes para que sea compatible con el objeto Date
+    var fechaFinal = new Date(año, mes, 0);
+    var cantidadDias = fechaFinal.getDate();
+    
+    var diasDelMes = [];
+    
+    for (var i = 1; i <= cantidadDias; i++) {
+      var fecha = new Date(año, mes - 1, i); // Restamos 1 al mes nuevamente para que sea compatible con el objeto Date
+      diasDelMes.push(fecha);
+    }
+    
+    return diasDelMes;
+  }
+
+  var mesSeleccionado = 7; // Febrero
+  var añoSeleccionado = 2023;
+
+//  const CargaFechasMes = async ()=> {
+//     var diasDelMes = obtenerDiasDelMes(mesSeleccionado, añoSeleccionado);
+    
+//     for (var i = 0; i < diasDelMes.length; i++) {
+//     var fecha = diasDelMes[i];
+//     var dia = fecha.getDate();}
+  
+//     const tramosHorarios = ["12:00", "13:00", "14:00", "15:00", "19:00", "20:00", "21:00", "22:00"];
+
+//     for (let i = 0; i < diasDelMes.length; i++) {
+//       const fecha = diasDelMes[i];
+//       const dia = fecha.getDate();
+//       const diaFormateado = dia.toString().padStart(2, '0');
+//       const mesFormateado = mesSeleccionado.toString().padStart(2, '0');
+//       const fechaHora = `${diaFormateado}${mesFormateado}${añoSeleccionado}`;
+    
+//       for (let j = 0; j < tramosHorarios.length; j++) {
+//         const tramoHorario = tramosHorarios[j];
+//         const fechaHoraTramo = `${fechaHora}`;
+    
+//         await setDoc(doc(db, "fechas", fechaHora, "tramosHorarios", tramoHorario), {
+//           disponible: true,
+//           ReservaUsuario: "",
+//           ReservaMail: "",
+//           ReservaPhone: "",
+//         });
+//       }
+//     }
+        // await db.collection('fechas').doc("fechaHora").set({hora:dia})
+   
+//   }
+  
 export const Calendario = ({infoSocio}) => {
     //necesito crear una función que obtenga el mes del año y las fechas disponibles.
     const [hora, setHora] = useState([])
     const GetHora = async () =>{
-
-        // const info = {disponible:true}
-        // await db.collection('horarios').update(info)
-        
+            // CargaFechasMes()
             db.collection('horarios').onSnapshot((querySnapshot)=>{
             const horas = []
             querySnapshot.forEach((hora)=> {

@@ -12,7 +12,6 @@ export const VistaReservas = () => {
         setInfoSocio({
             ...infoSocio,[target.name]: target.value
         })
-
     }
 
     return(
@@ -39,12 +38,17 @@ export const VistaReservas = () => {
         </div>
         </div>
         </form>
-    </section>
         <h2>Agenda de Julio</h2>
+    </section>
         <div className="container-vista-calendario-horarios">
         {/* <div> */}
+        {infoSocio.userName && infoSocio.email && infoSocio.phoneNumber ?(
+            <>
             <Calendario infoSocio={infoSocio}/>
-            {/* <Horarios/> */}
+            </>
+        ):(
+            <h1>La agenda se desplegará pronto...</h1>
+        )}
         </div>
     </>      
     )
