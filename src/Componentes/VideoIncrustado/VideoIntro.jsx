@@ -1,5 +1,5 @@
 import ReactPlayer from "react-player"
-let video = "./src/assets/images/VideoIntro.mp4"
+let video = "./Public/VideoIntro.mp4"
 import "./styles.css"
 
 export const VideoIntro = () =>{
