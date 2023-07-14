@@ -5,7 +5,7 @@ import { useState } from "react"
 
 export const FormContacto = () =>{
 
-    const camposContacto = {name:'',phone:'',email:'',request:'Seleccione...'}
+    const camposContacto = {name:'',phone:'',email:'',request:'Seleccione'}
     const [contacto,setContacto] = useState(camposContacto)
 
 // Acá estoy enviando la información de reserva a la base de datos firestore.
@@ -14,13 +14,12 @@ export const FormContacto = () =>{
 
         try{
             await db.collection('contacto').add(contacto)
-            swal("Solicitud recibida exitosamente", `Muchas gracias ${contacto.name}, tu solicitud para ${contacto.request} pronto será respondida al correo ${contacto.email}`, "success");
+            swal("Solicitud recibida exitosamente", `Muchas gracias ${contacto.name}, tu solicitud para ${contacto.request} pronto será respondida al correo ${contacto.email} y al número ${contacto.phone}`, "success");
             setContacto(camposContacto)
         }catch (err){
             swal("Upsss", "¿Algo falló, podrías intentar nuevamente?", "error");
         }
     }
-
     const getFormValues = ({target}) =>{
         setContacto({
           ...contacto,[target.name]: target.value
@@ -29,8 +28,6 @@ export const FormContacto = () =>{
 
     return (
         <>
-
-
         <section className="container-contacto">
             <div className="container-imagen">
                 <img src="./src/Componentes/FormularioContacto/ImagenContacto.jpeg" alt="Imagen-Contacto"/>
@@ -39,7 +36,7 @@ export const FormContacto = () =>{
         <div className="container-formulario">
         <form>
         <div className="mb-2">
-            <h2>¿Quieres hablar con nosotros o necesitas más información?</h2>
+            <h4>¿Quieres hablar con nosotros o necesitas más información?</h4>
         
         <p>Por favor completa los datos y te contactaremos a la brevedad</p>
         <div className="form-input">
@@ -57,7 +54,6 @@ export const FormContacto = () =>{
         <div className="form-input">
         <label for="inputState">¿En que podemos ayudarte?</label>
             <select name="request" onChange={getFormValues} value={contacto.request} id="inputState" className="form-control">
-            <option disabled selected>Seleccione...</option>
             <option>Reservas</option>
             <option>Eventos Coporativos</option>
             <option>Clases de Cocina</option>
@@ -65,7 +61,9 @@ export const FormContacto = () =>{
         </select>
         </div>
         </div>
-        <button type="submit" onClick={EnviarCorreo} className="btn btn-primary">Enviar</button>
+        {contacto.email && contacto.name && contacto.phone && contacto.request ? (
+            <button type="submit" onClick={EnviarCorreo} className="btn btn-primary">Enviar</button>
+        ):([])}        
         </form>
         </div>
         </section>

@@ -26,16 +26,27 @@ export const VistaReservas = () => {
         <div className="row align-items-start">
         <div className="col">
         <label for="exampleInputEmail1" className="form-label">Nombre Completo</label>
-        <input name="userName" onChange={getValue} type="text" className="form-control" id="inputName" aria-describedby="naneHelp" required></input>
+        <input name="userName" value={infoSocio.name} onChange={getValue} type="text" className="form-control" id="inputName" aria-describedby="naneHelp" required></input>
         </div>
         <div className="col">
         <label for="exampleInputEmail1" className="form-label">Teléfono de contacto</label>
-        <input name="phoneNumber" onChange={getValue} type="phone" className="form-control" id="inputPhone" aria-describedby="phoneHelp"></input>
+        <input name="phoneNumber" value={infoSocio.phoneNumber} onChange={getValue} type="phone" className="form-control" id="inputPhone" aria-describedby="phoneHelp"></input>
         </div>
         <div className="col">
         <label for="exampleInputEmail1" className="form-label">Correo electrónico</label>
-        <input name="email" onChange={getValue} type="email" className="form-control" id="inputMail" aria-describedby="emailHelp"></input>
+        <input name="email" value={infoSocio.email} onChange={getValue} type="email" className="form-control" id="inputMail" aria-describedby="emailHelp"></input>
         </div>
+        <div className="col">
+        <label for="inputState" className="form-label">Seleccione Mes</label>
+            <select name="request" id="inputState" className="form-control">
+            <option value="7">Julio</option>
+            <option>Agosto</option>
+            <option>Septiembre</option>
+            <option>Octubre</option>
+            <option>Noviembre</option>
+        </select>
+        </div>
+
         </div>
         </form>
         <h2>Agenda de Julio</h2>
@@ -46,9 +57,7 @@ export const VistaReservas = () => {
             <>
             <Calendario infoSocio={infoSocio}/>
             </>
-        ):(
-            <h1>La agenda se desplegará pronto...</h1>
-        )}
+        ):([])}
         </div>
     </>      
     )
