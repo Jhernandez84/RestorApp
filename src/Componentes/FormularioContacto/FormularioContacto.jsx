@@ -30,7 +30,7 @@ export const FormContacto = () =>{
         <>
         <section className="container-fluid d-flex flex-row justify-content-between">
             <div className="container order-0">
-                <img src="./src/Componentes/FormularioContacto/ImagenContacto.jpeg" alt="Imagen-Contacto"/>
+                <img src="https://img.freepik.com/fotos-premium/foto-vertical-copa-vid-vino-seco-oscuro-sobre-fondo-borroso-luz-restaurante-cafe-interior-plato-acompanamiento-pasta-fusilli-salchicha-plato-blanco-mesa-reservas-restaurante-cerrar_349071-2775.jpg" alt="Imagen-Contacto"/>
             </div>
 
         <div className="container">
