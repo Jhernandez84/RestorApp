@@ -3,12 +3,17 @@
     height: 30px;
     width: 30px;
     border-radius: 25px 0 0 25px;
-    border: solid;
+    /* border: solid; */
     text-align: center;
     text-align: end;
     padding: none;
     margin: none;
 }
+
+.card{
+    margin-top: 10px;
+}
+
 
 .btn1 {
     border-radius: 0px 25px 25px 0;
@@ -40,11 +45,12 @@
     grid-template-rows: 20% 60% 20%;
 }
 
-.card-container .card-menu .menu-pedido-container{
+.menu-pedido-container{
     display: flex;
     flex-direction: row;
     justify-self: flex-end;
     margin-bottom: 0px;
+    border-color: none;
 }
 
 .card-container .card-menu .menu-pedido-container p{

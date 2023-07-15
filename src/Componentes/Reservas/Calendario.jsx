@@ -94,7 +94,7 @@ export const Calendario = ({mes, infoSocio}) => {
                 })}
         </div>
         <div>
-            <p className="row-title">Horarios</p>
+            <p className="row-title d-flex justify-content-center">Horarios</p>
             {hora.map((horarios)=>( <Horarios infoSocio={infoSocio} horarios={horarios} key={horarios.id}/>))}   
         </div>
         </>

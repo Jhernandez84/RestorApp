@@ -1,18 +1,14 @@
 h1{
     margin: 50px;
 }
-.container-historia p{
+/* .container-historia p{
     text-align: justify;
     margin: 25px 25px 25px 0px;
-}
-.two-col-container{
-    display: flex;
-    flex-direction: row;
-}
+} */
+
 
 .container-historia h2{
     margin-top: 50px;
-
 }
 
 .text-contacto{

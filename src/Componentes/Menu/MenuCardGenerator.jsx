@@ -7,23 +7,19 @@ export const MenuCardGenerator = ({menu}) =>{
 
     return (
         <>
-        <div className="card-container">
-            <div className="card-menu">
-                <div className="card-menu-image">
-                    <img className="card-image" src={menu.imagen} alt={menu.nombre}/>
-                </div>
-                <div className="card-menu-details">                
-                    <p className="menu-title">{menu.nombre} de {menu.chef} ({menu.estrellas}) - Valor $ {menu.valor}</p>
-                    <p className="menu-desc">{menu.descripcion}</p>
-                {/* </div> */}
-                <div className="menu-pedido-container">
+
+        <div className="card">
+        <div className="card-body">
+            <img className="card-image" src={menu.imagen} alt={menu.nombre}/>
+            <h5 className="card-title">{menu.nombre} de {menu.chef} ({menu.estrellas}) - Valor $ {menu.valor}</h5>
+            <p className="card-text">{menu.descripcion}</p>
+            <div className="menu-pedido-container justify-content-center">
                     <p>Agregar a mi pedido</p>
-                    <button className="btn2 btnCart" onClick={()=>reducir(0)}>-{1}</button>
+                    <button className="btn2 btnCart" onClick={()=>reducir(0)}>-</button>
                     <p>{Pedido}</p>
-                    <button className="btn1 btnCart" onClick={()=>aumentar(0)}>+{1}</button>
+                    <button className="btn1 btnCart" onClick={()=>aumentar(0)}>+</button>
                 </div> 
-                </div>
-            </div>
+        </div>
         </div>
         </>
     )

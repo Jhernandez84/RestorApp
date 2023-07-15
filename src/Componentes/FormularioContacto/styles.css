@@ -1,29 +1,10 @@
-.container-contacto{
-    display: grid;
-    grid-template-columns: auto auto;
-    margin: 50px 25px 100px 25px;
-    
-}
-
-.form-input{
-    margin: 10px 20% 0 20%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 img{
-    height: 500px;
-    width: 400px;
+    height: 65%;
+    width: 90%;
     border-radius: 25px;
 }
 
-.container-formulario{
-    margin-left: 5%;
-}
-
 .btn{
-    margin: 10px 20% 0 20%;
-    width: 60%;
+    /* margin: 10px 20% 0 20%; */
+    width: 100%;
 }

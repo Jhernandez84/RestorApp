@@ -1,37 +1,28 @@
 import "./styles.css"
 
-
-
 export const Blog = () =>{
 
     return(
         <>
-            <section className="Blog">
+            <section className="container-fluid text-center">
             <h1>Bienvenido a nuestro Blog</h1>
-            <article className="chef-article article">
-                <article className="article-vertical">
-                    <h1>Descubre los sabores del mundo en un solo lugar.</h1>
-                    <div className="chef-text text">
-                    En nuestro blog, te llevaremos a un viaje culinario por diferentes culturas y te presentaremos recetas auténticas y deliciosas de todo el mundo.
-                    </div>
-                </article>
-                    <img className="chef-photo" src="https://i.blogs.es/30cbec/fotojet-3/840_560.jpg" alt="" />
-            </article>
-            
+            <div className="clearfix">
+            <img className="col-md-6 float-md-end mb-3 ms-md-3 chef-photo" src="https://i.blogs.es/30cbec/fotojet-3/840_560.jpg" alt="" />
+                <h1>Descubre los sabores del mundo en un solo lugar.</h1>
+                <p> En nuestro blog, te llevaremos a un viaje culinario por diferentes culturas y te presentaremos recetas auténticas y deliciosas de todo el mundo.</p>
+            </div>
             <h1>Un equipo de trabajo de primer nivel</h1>
-            <article className="chef-article article">
-                <img className="chef-photo" src="https://foodandtravel.mx/wp-content/uploads/2017/04/chefsenelmundo.jpg" alt="" />
+            <article className="container-fluid text-center">
+                <img className="chef-photo-equipo" src="https://foodandtravel.mx/wp-content/uploads/2017/04/chefsenelmundo.jpg" alt="" />
                 <div className="chef-text text">
                 Nuestro equipo de chefs y expertos en gastronomía está apasionado por explorar la diversidad culinaria global y compartir sus descubrimientos contigo. Encontrarás recetas tradicionales de países como Italia, México, India, Tailandia, Francia y muchos más. Desde platos principales exquisitos hasta postres tentadores, tenemos algo para todos los paladares.
                 </div>
             </article>
             <h1>Aprendemos de la práctica, no de la teoría</h1>
-            <article className="chef-recipes-article article">
-            <div className="chef-text text">
-            Además de las recetas, también te ofrecemos consejos útiles sobre ingredientes, técnicas de cocina y presentación de platos. Te ayudaremos a comprender los secretos de cada cocina y a crear platos auténticos en tu propio hogar.
+            <div className="clearfix text-center">
+                <img className="col-md-6 float-md-end mb-3 ms-md-3 chef-photo" src="https://www.eldiario24.com/d24ar/fotos/notas/2020/10/20/461204_20201020061304.jpg" alt="" />
+                <p>Además de las recetas, también te ofrecemos consejos útiles sobre ingredientes, técnicas de cocina y presentación de platos. Te ayudaremos a comprender los secretos de cada cocina y a crear platos auténticos en tu propio hogar.</p>
             </div>
-            <img className="chef-photo" src="https://www.eldiario24.com/d24ar/fotos/notas/2020/10/20/461204_20201020061304.jpg" alt="" />
-            </article>
 
             <h1>No hay comida sin historia</h1>
             <article className="chef-final-article">

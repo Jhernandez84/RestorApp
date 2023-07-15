@@ -4,10 +4,10 @@ import "./styles.css"
 
 export const VideoIntro = () =>{
     return (
-        <div className="contenedor">
+        <div className="container d-flex justify-content-center">
             <ReactPlayer
             className="react-player"
-            url={video} 
+            url="https://www.youtube.com/watch?v=tJlzIJaokVY&t=11s" 
             muted="True"
             playing="True"
             loop="True"

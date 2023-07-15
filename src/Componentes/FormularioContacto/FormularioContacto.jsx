@@ -28,16 +28,16 @@ export const FormContacto = () =>{
 
     return (
         <>
-        <section className="container-contacto">
-            <div className="container-imagen">
+        <section className="container-fluid d-flex flex-row justify-content-between">
+            <div className="container order-0">
                 <img src="./src/Componentes/FormularioContacto/ImagenContacto.jpeg" alt="Imagen-Contacto"/>
             </div>
 
-        <div className="container-formulario">
+        <div className="container">
         <form>
-        <div className="mb-2">
-            <h4>¿Quieres hablar con nosotros o necesitas más información?</h4>
+        <div className="mb-4">
         
+        <h4>¿Quieres hablar con nosotros o necesitas más información?</h4>
         <p>Por favor completa los datos y te contactaremos a la brevedad</p>
         <div className="form-input">
         <label for="exampleInputEmail1" className="form-label">Nombre Completo</label>
