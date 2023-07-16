@@ -3,11 +3,12 @@ import { useState, useEffect } from "react"
 import "./styles.css"
 
 import { Calendario } from "./Calendario"
+
 export const VistaReservas = () => {
 
-    const datosSocio= {userName:'',phoneNumber:'',email:''}
-    const [infoSocio, setInfoSocio] = useState(datosSocio)
-    
+    let datosSocio= {userName:'',phoneNumber:'',email:''}
+    let [infoSocio, setInfoSocio] = useState(datosSocio)
+
     const getValue = ({target}) =>{
         setInfoSocio({
             ...infoSocio,[target.name]: target.value
@@ -33,7 +34,7 @@ export const VistaReservas = () => {
         <label for="exampleInputEmail1" className="form-label">Correo electrónico</label>
         <input name="email" value={infoSocio.email} onChange={getValue} type="email" className="form-control" id="inputMail" aria-describedby="emailHelp"></input>
         </div>
-        <div className="col">
+        {/* <div className="col">
         <label for="inputState" className="form-label">Seleccione Mes</label>
             <select name="request" id="inputState" className="form-control">
             <option value="7">Julio</option>
@@ -42,7 +43,7 @@ export const VistaReservas = () => {
             <option>Octubre</option>
             <option>Noviembre</option>
         </select>
-        </div>
+        </div> */}
 
         </div>
         </form>

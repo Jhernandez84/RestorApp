@@ -1,14 +1,14 @@
 .cont-cal-filas{
     display: grid;
     justify-content: center;
-    grid-template-columns: 8vw 8vw 8vw 8vw 8vw 8vw 8vw;
-    grid-template-rows: 8vw repeat();
+    grid-template-columns: 14% 14% 14% 14% 14% 14% 14% ;
+    grid-template-rows: 14% repeat();
 }
 
 .row-title{
-    font-size: medium;
+    font-size: 1.7vw;
     font-weight: bold;
-    height: 2.5vw;
+    /* height: 2.5vw; */
     text-align:center;
 }
 
@@ -19,7 +19,7 @@
     align-items: center;
     border-top: solid 0.5px;
     border-color: black;
-    height: 5vw;
+    font-size: 1.7vw;
 }
 
 .fds{
@@ -32,10 +32,12 @@
 }
 
 .hora{
+    margin: 5px 10px;
     cursor: pointer;
     border: solid 0.1px;
-    height: 30px;
-    margin-bottom: 3%;
+    /* height: 30px; */
+    /* margin-bottom: 3%; */
+    font-size: 1.7vw;
     border-radius: 25px;
 }
 
@@ -46,27 +48,27 @@
     justify-content: center;
 }
 
-.lista-horarios{
-    width: 80%;
+.hora{
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 
 .img-reservas{
-    /* margin: 25px 0 25px 0; */
     width: 80vw;
     height: 20vh;
 }
 
 .text{
     display: flex;
-    margin: 50px 0 50px 0;
+    margin: 10px 0 20px 0;
     padding: 30px 75px 50px;
 }
 
 @media (max-width: 700px) {
-    .container-vista-calendario-horarios{
-        grid-template-rows: auto auto;
-        grid-template-columns: auto;
 
+    .container-vista-calendario-horarios{
+        grid-template-columns: 100%;
     }
     
 } 

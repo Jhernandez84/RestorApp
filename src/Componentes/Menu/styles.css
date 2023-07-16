@@ -14,6 +14,10 @@
     margin-top: 10px;
 }
 
+.card-image{
+    width: 40vw;
+    margin-bottom: 10px;
+}
 
 .btn1 {
     border-radius: 0px 25px 25px 0;
@@ -71,4 +75,3 @@
     text-align: left;
     
 }
-
