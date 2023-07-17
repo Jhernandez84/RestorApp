@@ -45,15 +45,18 @@ const obtenerDiasDelMes = (mes, año) => {
     }
 //CargaFechasMes()
   
-export const Calendario = ({mes, infoSocio}) => {
+export const Calendario = ({infoSocio,setInfoSocio,datosSocio}) => {
     //necesito crear una función que obtenga el mes del año y las fechas disponibles.
     const diasDelMes = obtenerDiasDelMes(mesSeleccionado, añoSeleccionado);
     const [hora, setHora] = useState([])
-    const GetHora = async () =>{
+
+    const GetHora = async (diaSeleccionado) =>{
             // CargaFechasMes()
             const tramosHorarios = [{hora:"12:00"},
-            {hora:"13:00"}, {hora:"14:00"}, {hora:"15:00"}, {hora:"19:00"}, {hora:"20:00"}, {hora:"21:00"}, {hora:"22:00"}];
-
+            {hora:"13:00"}, {hora:"14:00"},
+            {hora:"15:00"}, {hora:"19:00"},
+            {hora:"20:00"}, {hora:"21:00"},
+            {hora:"22:00"}];
         //     db.collection('horarios').onSnapshot((querySnapshot)=>{
             // const horas = []
         //     querySnapshot.forEach((hora)=> {
@@ -63,6 +66,19 @@ export const Calendario = ({mes, infoSocio}) => {
         // // console.log(hora)
         // })
         return hora
+    }
+
+    const ReservarSlot = async (time)  => {
+        try{
+        swal("Reserva exitosa", `${infoSocio.userName}, su reserva fue ingresada con éxito para las ${time} y hemos enviado un correo a su dirección ${infoSocio.email}`, "success");
+        const info = {usuario:infoSocio.userName, usuarioMail:infoSocio.email, hora:hora}
+        // await db.collection('horarios').doc(time).update(info)
+        await db.collection('reservas').add(info)
+        setInfoSocio(datosSocio)
+        // 
+        } catch(error){
+            swal("Lo sentimos", `${infoSocio.userName}, su reserva no pudo ser ingresada, intente nuevamente"`,"error")
+        }
     }
 
     return (
@@ -77,7 +93,7 @@ export const Calendario = ({mes, infoSocio}) => {
                 <div className="row-title">Domingo</div>
                 {/* De aquí en adelante debe renderizar las fechas */}
                 {/* Esta parte está en proceso de mejora */}
-                <div className="col-cal-dia" onClick={()=> GetHora()}>26</div>
+                <div className="col-cal-dia">26</div>
                 <div className="col-cal-dia">27</div>
                 <div className="col-cal-dia">28</div>
                 <div className="col-cal-dia">29</div>
@@ -85,17 +101,24 @@ export const Calendario = ({mes, infoSocio}) => {
                 {diasDelMes.map((dia)=>{
                     if (dia.nombreDia ==="Saturday"|| dia.nombreDia ==="Sunday"){
                         return (
-                        <div className="col-cal-dia fds" onClick={()=> GetHora()}>{dia.dia}</div>)
+                        <div className="col-cal-dia fds" key={dia.dia} onClick={()=> GetHora(dia.dia)}>{dia.dia}</div>)
                     }else{
                         return(
-                        <div className="col-cal-dia"onClick={()=> GetHora()}>{dia.dia}</div>
+                        <div className="col-cal-dia" key={dia.dia} onClick={()=> GetHora(dia.dia)}>{dia.dia}</div>
                         )
                     }
                 })}
         </div>
         <div>
             <p className="row-title d-flex justify-content-center">Horarios</p>
-            {hora.map((horarios)=>( <Horarios infoSocio={infoSocio} horarios={horarios} key={horarios.id}/>))}   
+            {hora.map((horarios)=> {
+                return(
+                // <>
+                <p className="hora" onClick={()=> ReservarSlot(horarios.hora)}>{horarios.hora} Disponible</p>
+                // </>
+                )
+            })}
+            {/* {hora.map((horarios)=>( <Horarios infoSocio={infoSocio} horarios={horarios} key={horarios.id}/>))}    */}
         </div>
         </>
 )}

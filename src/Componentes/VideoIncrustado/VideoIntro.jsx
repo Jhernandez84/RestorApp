@@ -8,9 +8,9 @@ export const VideoIntro = () =>{
             <ReactPlayer
             className="react-player"
             url="https://www.youtube.com/watch?v=tJlzIJaokVY&t=11s" 
-            muted="True"
-            playing="True"
-            loop="True"
+            muted={true}
+            playing={true}
+            loop={true}
             />
         </div>
     )

@@ -6,9 +6,9 @@
 }
 
 .row-title{
-    font-size: 1.7vw;
+    font-size: min(1.7vw,25px);
     font-weight: bold;
-    /* height: 2.5vw; */
+    /* height: 3vw; */
     text-align:center;
 }
 
@@ -20,6 +20,7 @@
     border-top: solid 0.5px;
     border-color: black;
     font-size: 1.7vw;
+    height: max(5vh,25px);
 }
 
 .fds{
@@ -37,7 +38,7 @@
     border: solid 0.1px;
     /* height: 30px; */
     /* margin-bottom: 3%; */
-    font-size: 1.7vw;
+    font-size: min(1.7vw,25px);
     border-radius: 25px;
 }
 
@@ -63,6 +64,10 @@
     display: flex;
     margin: 10px 0 20px 0;
     padding: 30px 75px 50px;
+}
+
+.col, .form-control{
+    font-size: min(1.7vw,25px);
 }
 
 @media (max-width: 700px) {

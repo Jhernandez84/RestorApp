@@ -1,13 +1,11 @@
-import { useState, useEffect } from "react"
-
-import "./styles.css"
-
+import { useState } from "react"
 import { Calendario } from "./Calendario"
+import "./styles.css"
 
 export const VistaReservas = () => {
 
-    let datosSocio= {userName:'',phoneNumber:'',email:''}
-    let [infoSocio, setInfoSocio] = useState(datosSocio)
+    const datosSocio= {userName:'',phoneNumber:'',email:''}
+    const [infoSocio, setInfoSocio] = useState(datosSocio)
 
     const getValue = ({target}) =>{
         setInfoSocio({
@@ -24,7 +22,7 @@ export const VistaReservas = () => {
         <div className="row align-items-start">
         <div className="col">
         <label for="exampleInputEmail1" className="form-label">Nombre Completo</label>
-        <input name="userName" value={infoSocio.name} onChange={getValue} type="text" className="form-control" id="inputName" aria-describedby="naneHelp" required></input>
+        <input name="userName" value={infoSocio.userName} onChange={getValue} type="text" className="form-control" id="inputName" aria-describedby="naneHelp" required></input>
         </div>
         <div className="col">
         <label for="exampleInputEmail1" className="form-label">N. de contacto</label>
@@ -44,12 +42,11 @@ export const VistaReservas = () => {
             <option>Noviembre</option>
         </select>
         </div> */}
-
         </div>
         </form>
         {infoSocio.userName && infoSocio.email && infoSocio.phoneNumber ?(
             <>
-            <h2>Agenda de Julio</h2>
+            <h2>Agenda de Julio*</h2>
             </>
         ):([])}
         
@@ -58,7 +55,7 @@ export const VistaReservas = () => {
         {/* <div> */}
         {infoSocio.userName && infoSocio.email && infoSocio.phoneNumber ?(
             <>
-            <Calendario infoSocio={infoSocio}/>
+            <Calendario infoSocio={infoSocio} setInfoSocio={setInfoSocio} datosSocio={datosSocio}/>
             </>
         ):([])}
         </div>

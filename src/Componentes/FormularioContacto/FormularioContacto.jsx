@@ -40,19 +40,19 @@ export const FormContacto = () =>{
         <h4>¿Quieres hablar con nosotros o necesitas más información?</h4>
         <p>Por favor completa los datos y te contactaremos a la brevedad</p>
         <div className="form-input">
-        <label for="exampleInputEmail1" className="form-label">Nombre Completo</label>
+        <label htmlFor="exampleInputEmail1" className="form-label">Nombre Completo</label>
         <input name="name" onChange={getFormValues} value={contacto.name} type="text" className="form-control" id="inputName" aria-describedby="emailHelp" required></input>
         </div>
         <div className="form-input">
-        <label for="exampleInputEmail1" className="form-label">Teléfono de contacto</label>
+        <label htmlFor="exampleInputEmail1" className="form-label">Teléfono de contacto</label>
         <input name="phone" onChange={getFormValues} value={contacto.phone} type="phone" className="form-control" id="inputPhone" aria-describedby="emailHelp"></input>
         </div>
         <div className="form-input">
-        <label for="exampleInputEmail1" className="form-label">Correo electrónico</label>
+        <label htmlFor="exampleInputEmail1" className="form-label">Correo electrónico</label>
         <input name="email" onChange={getFormValues} value={contacto.email} type="email" className="form-control" id="inputMail" aria-describedby="emailHelp"></input>
         </div>
         <div className="form-input">
-        <label for="inputState">¿En que podemos ayudarte?</label>
+        <label htmlFor="inputState">¿En que podemos ayudarte?</label>
             <select name="request" onChange={getFormValues} value={contacto.request} id="inputState" className="form-control">
             <option>Reservas</option>
             <option>Eventos Coporativos</option>
