@@ -70,11 +70,29 @@ export const Calendario = ({infoSocio,setInfoSocio,datosSocio}) => {
 
     const ReservarSlot = async (time)  => {
         try{
-        swal("Reserva exitosa", `${infoSocio.userName}, su reserva fue ingresada con éxito para las ${time} y hemos enviado un correo a su dirección ${infoSocio.email}`, "success");
-        const info = {usuario:infoSocio.userName, usuarioMail:infoSocio.email, hora:hora}
+        const info = {usuario:infoSocio.userName, usuarioMail:infoSocio.email, hora:time}
         // await db.collection('horarios').doc(time).update(info)
         await db.collection('reservas').add(info)
-        setInfoSocio(datosSocio)
+        // swal("Reserva exitosa", `${infoSocio.userName}, su reserva fue ingresada con éxito para las ${time} pronto podremos enviar correos a su dirección ${infoSocio.email}`, "success");
+        swal(`${infoSocio.userName}, su reserva fue ingresada con éxito para las ${time} pronto podremos enviar correos a su dirección ${infoSocio.email} \n \n ¿Desea reservar un nuevo horario?` , {
+            buttons: {
+              Si: {text: "Si, quiero reservar otra fecha",
+                value:"si"},
+              No: {
+                text: "No, ya estoy listo",
+                value: "no"},
+            },
+          })
+          .then((value) => {
+            switch (value) {
+              case "si":
+                // swal("Nueva Reserva", "Selecciona otro horario", "info");
+                break;
+              case "no":
+                setInfoSocio(datosSocio)
+                swal("Proceso de reserva finalizado", `Muchas gracias ${infoSocio.userName}, te estaremos esperando`, "success");
+            }
+          });
         // 
         } catch(error){
             swal("Lo sentimos", `${infoSocio.userName}, su reserva no pudo ser ingresada, intente nuevamente"`,"error")

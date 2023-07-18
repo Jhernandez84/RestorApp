@@ -1,47 +1,36 @@
-# Nombre del Proyecto
+# RestorApp
 
-Breve descripción o resumen del proyecto.
+En este proyecto que sirve como base para aplicación de restaurant se han creado varias secciones con conexión a Firebase, tal es el caso del menú (el que se carga directamente desde el servidor) y la reserva de horas y contacto, que guardan datos en firebase.
+
+<img src="../src/assets/images/home.jpg" width="500px" alt="Vista Contacto">
 
 ## Contenido
 
-1. [Descripción](#descripción)
-2. [Requisitos](#requisitos)
-3. [Instalación](#instalación)
-4. [Uso](#uso)
-5. [Contribución](#contribución)
-6. [Licencia](#licencia)
-7. [Contacto](#contacto)
-
-## Descripción
-
-Explica de manera detallada el propósito y las características del proyecto.
-
-## Requisitos
-
-Enumera los requisitos necesarios para poder utilizar o contribuir al proyecto.
-
-## Instalación
-
-Proporciona instrucciones paso a paso sobre cómo instalar y configurar el proyecto. Puedes incluir comandos o enlaces a guías detalladas si es necesario.
-
-## Uso
-
-Proporciona ejemplos o instrucciones sobre cómo utilizar el proyecto. Puedes incluir capturas de pantalla o imágenes para ilustrar los pasos si es necesario.
-
-![Ejemplo de imagen](ruta/a/la/imagen.png)
-
-## Contribución
-
-Explica cómo otros desarrolladores pueden contribuir al proyecto. Incluye pautas para enviar solicitudes de extracción y detalles sobre el proceso de revisión del código.
-
-## Licencia
-
-Indica la licencia bajo la cual se distribuye el proyecto. Puedes incluir un enlace a un archivo de licencia separado si es necesario.
+1. [Sección Contacto](#Contacto)
+2. [Sección Menú](#Menú)
+3. [Sección Reservas](#Reservas)
+4. [Dudas o sugerencias](#Otros)
 
 ## Contacto
 
-Proporciona información de contacto para que los usuarios puedan comunicarse contigo en caso de tener preguntas o problemas relacionados con el proyecto.
+Esta sección de la página permite guardar la información de aquellos que te han contactado, de esta manera, podrás mantenerlos siempre informados de las noticias y nuevos menu 
+
+<img src="../src/assets/images/Contacto.jpg" width="500px" alt="Vista Contacto">
+
+## Menú
+
+En esta sección podrás revisar el menú disponible en para el día y la cantida de pedidos que se han solicitado.
+
+<img src="../src/assets/images/Menu.jpg" width="500px" alt="Vista Menú">
+
+## Reservas
+
+La opción de reservas te invita a completar los datos del usuario para posteriormente desplegar las horas disponibles para le mes actual. (próximamente permitirá seleccionar otras fechas)
+
+<img src="../src/assets/images/Reservas.jpg" width="500px" alt="Vista Reservas">
+
+## Otros
+
+Tienes dudas de como funciona o quieres conocer más acerca de esta aplicación, puedes enviar un correo a DigitalSolutions@ventas.cl
 
 ---
-
-¡Siéntete libre de agregar secciones adicionales o modificar el contenido según las necesidades de tu proyecto! Recuerda que este es solo un ejemplo y puedes adaptarlo para que se ajuste mejor a tu caso específico.

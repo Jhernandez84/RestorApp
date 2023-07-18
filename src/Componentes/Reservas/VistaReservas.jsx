@@ -19,7 +19,7 @@ export const VistaReservas = () => {
         <p className="text">Gracias por ser parte de nuestra selecta gama de clientes, por ser un cliente black label puedes reservar tu almuerzo o cena directamente a través de esta página</p>
         <section className="container-fluid text-center">
         <form>
-        <div className="row align-items-start">
+        <div className="row align-items-center">
         <div className="col">
         <label for="exampleInputEmail1" className="form-label">Nombre Completo</label>
         <input name="userName" value={infoSocio.userName} onChange={getValue} type="text" className="form-control" id="inputName" aria-describedby="naneHelp" required></input>

@@ -5,7 +5,7 @@ import { useState } from "react"
 
 export const FormContacto = () =>{
 
-    const camposContacto = {name:'',phone:'',email:'',request:'Seleccione'}
+    const camposContacto = {name:'',phone:'',email:'',request:'Reservas'}
     const [contacto,setContacto] = useState(camposContacto)
 
 // Acá estoy enviando la información de reserva a la base de datos firestore.
@@ -54,7 +54,7 @@ export const FormContacto = () =>{
         <div className="form-input">
         <label htmlFor="inputState">¿En que podemos ayudarte?</label>
             <select name="request" onChange={getFormValues} value={contacto.request} id="inputState" className="form-control">
-            <option>Reservas</option>
+            <option selected default>Reservas</option>
             <option>Eventos Coporativos</option>
             <option>Clases de Cocina</option>
             <option>Otros</option>

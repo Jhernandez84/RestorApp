@@ -70,6 +70,11 @@
     font-size: min(1.7vw,25px);
 }
 
+.container-fluid{
+    padding-bottom: 25px;
+
+}
+
 @media (max-width: 700px) {
 
     .container-vista-calendario-horarios{
